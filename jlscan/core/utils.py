@@ -43,4 +43,4 @@ def banner():
     print(f'   \___/|_____|____/ \___\__,_|_| |_|     | --[{font.turquoise}  Trinh Quang Thai{font.default}  ]--')
     print(f' ========================================================================={font.default}')
     print(f'  ---[ {font.white}Project name: {font.yellow}Joomla Scanner{font.default} ]---')
-    print(f'  ---[ {font.white}Project link: {font.blue}{font.under_line}https://github.com/7heknight/{font.default} ]---')
+    print(f'  ---[ {font.white}Project link: {font.blue}{font.under_line}https://github.com/7heKnight/jlscan/{font.default} ]---')
