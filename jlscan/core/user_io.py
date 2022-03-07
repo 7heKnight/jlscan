@@ -19,9 +19,9 @@ def user_selection():
     try:
         banner()
         print('--------------------------------------------------------------------------\n')
-        print('1. Scan Joomla server.')
-        print('2. Check for update.')
-        print('3. Exit The program.\n')
+        print(f'{font.blue}Option 1:{font.default} Scan Joomla server.')
+        print(f'{font.yellow}Option 2:{font.default} Update database.')
+        print(f'{font.red}Option 3:{font.default} Exit The program.\n')
         while True:
             try:
                 wait_msg('Enter option: ')
