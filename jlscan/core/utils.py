@@ -36,7 +36,7 @@ def link_msg(message: str):
 
 
 def banner():
-    print(f'       _ _     ____                       |         {font.purple}Team Members:{font.default}')
+    print(f'       _ _     ____                       |        {font.purple}{font.under_line}Team Members:{font.default}')
     print(f'      | | |   / ___|  ___ __ _ _ __       | --[{font.turquoise}    Ly Tuan Kiet{font.default}    ]--')
     print(f'   _  | | |   \___ \ / __/ _` | \'_ \      | --[{font.turquoise}  Nguyen Phuong Duy{font.default} ]--')
     print(f'  | |_| | |___ ___) | (_| (_| | | | |     | --[{font.turquoise} Nguyen Lam Y Khang{font.default} ]--')
