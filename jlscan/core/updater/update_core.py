@@ -79,7 +79,7 @@ def __check_version_earlier(version: str):
                             f"{check_len}.0<= {parse_version.group(1)}", version)
             string = __replace_others(string)
         version = string
-    except :
+    except:
         error_msg(f'[-] Could not parse: "{version}"')
     finally:
         return version
@@ -164,7 +164,7 @@ def __parse_to_database(part):
         error_msg('Version not found: ')
     if argument_error:
         print('\t{' + f'"name": "{name}", "CVE": "{cve}", "version": "{version}"' + '}')
-    return '\t{' + f'"name": "{name}", "CVE": "{cve}", "version": "{version}"' + '}'
+    return '{' + f'"name": "{name}", "CVE": "{cve}", "version": "{version}"' + '}'
 
 
 def __get_end_page(html):
@@ -248,7 +248,7 @@ def update_core():
             end_page = __get_end_page(source)
         __get_vulnerabilities(source, list_database)
         counter += 1
+        success_msg('Done\n')
         if counter > end_page:
             break
-        success_msg('Done\n')
     __write_to_db(list_database)
