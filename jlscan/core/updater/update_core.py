@@ -163,7 +163,7 @@ def __parse_to_database(part):
         print('')
         error_msg('Version not found: ')
     if argument_error:
-        print('\t{' + f'"name": "{name}", "CVE": "{cve}", "version": "{version}"' + '}')
+        print('\n\t{' + f'"name": "{name}", "CVE": "{cve}", "version": "{version}"' + '}')
     return '{' + f'"name": "{name}", "CVE": "{cve}", "version": "{version}"' + '}'
 
 
@@ -207,17 +207,17 @@ def __write_to_db(list_database):
     from os.path import isfile, isdir
     from os import makedirs
 
-    if not isdir("../../database/"):
-        makedirs("../database/")
-    if not isfile('../../database/core.jdb'):
-        open('../../database/core.jdb', 'w').close()
-    with open('../../database/core.jdb', 'a') as file:
-        exist_data = open('../../database/core.jdb', 'r').read()
+    if not isdir("database/"):
+        makedirs("database/")
+    if not isfile('database/core.jdb'):
+        open('database/core.jdb', 'w').close()
+    with open('database/core.jdb', 'a') as file:
+        exist_data = open('database/core.jdb', 'r').readlines()
         for data in list_database:
             if data not in exist_data:
                 file.write(data + '\n')
-    print('\n')
-    success_msg('Updated Successfully!')
+    print('')
+    success_msg('Updated Successfully!\n')
 
 
 def __get_vulnerabilities(html, list_database):
@@ -251,4 +251,5 @@ def update_core():
         success_msg('Done\n')
         if counter > end_page:
             break
+
     __write_to_db(list_database)
