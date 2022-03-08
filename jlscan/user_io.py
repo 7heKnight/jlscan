@@ -1,5 +1,4 @@
-from jlscan.core.updater.update_core import *
-from jlscan.core.utils import *
+from utils import *
 import requests
 
 
