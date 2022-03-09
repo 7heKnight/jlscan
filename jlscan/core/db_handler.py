@@ -1,5 +1,5 @@
-from jlscan.core.utils import *
-from jlscan.core.cmp_version import compare_versions
+from utils.utils import *
+from update.cmp_version import compare_versions
 import requests
 import json
 import re

@@ -1,4 +1,4 @@
-import utils
+from utils import utils
 import requests
 import re
 
@@ -207,12 +207,12 @@ def __write_to_db(list_database):
     from os.path import isfile, isdir
     from os import makedirs
 
-    if not isdir("database/"):
-        makedirs("database/")
-    if not isfile('database/core.jdb'):
-        open('database/core.jdb', 'w').close()
-    with open('database/core.jdb', 'a') as file:
-        exist_data = open('database/core.jdb', 'r').readlines()
+    if not isdir('../database/'):
+        makedirs('../database/')
+    if not isfile('../database/core.jdb'):
+        open('../database/core.jdb', 'w').close()
+    with open('../database/core.jdb', 'a') as file:
+        exist_data = open('../database/core.jdb', 'r').readlines()
         for data in list_database:
             if data not in exist_data:
                 file.write(data + '\n')
@@ -231,7 +231,7 @@ def __get_vulnerabilities(html, list_database):
         list_database.append(__parse_to_database(part))
 
 
-def update_core():
+def update_db():
     """
     This is the main of code, which will be called and returned
         the data to file: ../resources/joomla/core.jdb
