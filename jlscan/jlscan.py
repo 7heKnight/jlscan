@@ -89,7 +89,7 @@ if __name__ == '__main__':
     try:
         if args.update:
             update_db()
-        if args.url != None:
+        elif args.url != None:
             print('do sth')
         else:
             parser.print_help()
