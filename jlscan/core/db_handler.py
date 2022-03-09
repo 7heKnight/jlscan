@@ -1,15 +1,16 @@
-from utils.utils import *
-from update.cmp_version import compare_versions
 import requests
 import json
 import re
+
+from jlscan.utils import utils
+from jlscan.core.version_handler import compare_versions
 
 
 def __get_version(url: str):
     source = requests.get(url).text
     version = re.search(r'<version>(.+?)</version>', source)
     if not version:
-        error_msg('Version not found!/n')
+        utils.error_msg('Version not found!/n')
         return 'Version not found!'
     return version.group(1)
 
