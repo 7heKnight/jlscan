@@ -1,6 +1,6 @@
 import requests
 
-from jlscan.utils import utils
+from jlscan.utils import io_utils
 
 
 def status_code_handler():
@@ -10,4 +10,6 @@ def status_code_handler():
     elif status == 301:
         #HTTPS handler
         pass
-    else: utils.error_msg('Error!')
+    else:
+        io_utils.error_msg('Error!')
+

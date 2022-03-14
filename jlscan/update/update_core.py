@@ -1,4 +1,3 @@
-from utils import utils
 import requests
 import re
 
@@ -59,7 +58,7 @@ def __replace_others(version: str):
     return version
 
 
-def __check_version_earlier(version: str):
+def __check_version_earlier(io_utils, version: str):
     """
     Checking for version with earlier argument
     :param version (string):
@@ -80,12 +79,12 @@ def __check_version_earlier(version: str):
             string = __replace_others(string)
         version = string
     except:
-        utils.error_msg(f'[-] Could not parse: "{version}"')
+        io_utils.error_msg(f'[-] Could not parse: "{version}"')
     finally:
         return version
 
 
-def __version_checker(version: str):
+def __version_checker(io_utils, version: str):
     """
     This Function used to check the format and reformat if not match
         with our database:
@@ -102,7 +101,7 @@ def __version_checker(version: str):
     """
     version = re.sub('<.+?>', '', version)
     if 'earlier' in version:
-        version = __check_version_earlier(version)
+        version = __check_version_earlier(io_utils, version)
     elif 'previous' in version:
         try:
             parse_version = re.search(r'([\d.]+) and all previous ([\d.]+) releases', version)
@@ -110,7 +109,7 @@ def __version_checker(version: str):
                              f'{parse_version.group(2)}<={parse_version.group(1)}', version)
             version = __replace_others(version)
         except:
-            utils.error_msg(f'Could not parse: "{version}"')
+            io_utils.error_msg(f'Could not parse: "{version}"')
     else:
         version = version.replace(', ', '|'). \
             replace('. ', '|'). \
@@ -126,7 +125,7 @@ def __version_checker(version: str):
     return version
 
 
-def __parse_to_database(part):
+def __parse_to_database(io_utils, part):
     """
     This parser will get name of vulnerability, CVE Number, and version
         from the part which data is inputted
@@ -149,19 +148,19 @@ def __parse_to_database(part):
     if 'X' in cve:
         argument_error = True
         print('')
-        utils.error_msg('CVE Number problem: ')
+        io_utils.error_msg('CVE Number problem: ')
     try:
         version = re.search(r'<li>Versions:(.+?)</li>', part).group(1). \
             replace('through', '<='). \
             replace('-', '<='). \
             replace(' <= ', '<=')
         version = re.sub(r'^[ ]{0,}', '', version)
-        version = __version_checker(version)
+        version = __version_checker(io_utils, version)
     except:  # If version not found, will continue to work and print the data
         version = ""
         argument_error = True
         print('')
-        utils.error_msg('Version not found: ')
+        io_utils.error_msg('Version not found: ')
     if argument_error:
         print('\n\t{' + f'"name": "{name}", "CVE": "{cve}", "version": "{version}"' + '}')
     return '{' + f'"name": "{name}", "CVE": "{cve}", "version": "{version}"' + '}'
@@ -197,7 +196,7 @@ def __get_html(url):
     return source
 
 
-def __write_to_db(list_database):
+def __write_to_db(utils, list_database):
     """
     This function will check if file doesn't exist, it will make a file
         named: core.jdb and then append value to text file
@@ -220,7 +219,7 @@ def __write_to_db(list_database):
     utils.success_msg('Updated Successfully!\n')
 
 
-def __get_vulnerabilities(html, list_database):
+def __get_vulnerabilities(io_utils, html, list_database):
     """
     This function will parse the vulnerability like Name, CVE, Version
     :param html (string): the source page
@@ -228,10 +227,10 @@ def __get_vulnerabilities(html, list_database):
     """
     parts = __parse_part(html)
     for part in parts:
-        list_database.append(__parse_to_database(part))
+        list_database.append(__parse_to_database(io_utils, part))
 
 
-def update_db():
+def update_db(io_utils):
     """
     This is the main of code, which will be called and returned
         the data to file: ../resources/joomla/core.jdb
@@ -239,17 +238,17 @@ def update_db():
     list_database = []
     end_page = 0
     counter = 0
-    utils.success_msg('Crawling on ' + utils.link_msg('https://developer.joomla.org/security-centre.html\n\n'))
+    io_utils.success_msg('Crawling on ' + io_utils.link_msg('https://developer.joomla.org/security-centre.html\n\n'))
 
     while True:
-        utils.wait_msg(f'Crawling on site: https://developer.joomla.org/security-centre.html?start={counter * 10} ')
+        io_utils.wait_msg(f'Crawling on site: https://developer.joomla.org/security-centre.html?start={counter * 10} ')
         source = __get_html(f"https://developer.joomla.org/security-centre.html?start={counter * 10}")
         if end_page == 0:
             end_page = __get_end_page(source)
-        __get_vulnerabilities(source, list_database)
+        __get_vulnerabilities(io_utils, source, list_database)
         counter += 1
-        utils.success_msg('Done\n')
+        io_utils.success_msg('Done\n')
         if counter > end_page:
             break
 
-    __write_to_db(list_database)
+    __write_to_db(io_utils, list_database)

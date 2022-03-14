@@ -2,8 +2,8 @@ import requests
 import json
 import re
 
-from jlscan.utils import utils
-from jlscan.core.version_handler import compare_versions
+from jlscan.utils import io_utils
+from jlscan.core.version_cmp import compare_versions
 
 
 def __get_version(url: str):

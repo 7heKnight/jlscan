@@ -1,5 +1,5 @@
 
-from jlscan.utils import utils
+from jlscan.utils import io_utils
 from jlscan.core.module_handler import status_code_handler
 
 DIRLIST = ('/administrator/components', '/components', '/administrator/modules', '/modules', '/administrator/templates',
