@@ -16,7 +16,8 @@ def user_selection():
                 choice = io_utils.input_integer('Enter option: ')
                 if choice == 1:  # In this option, add more option for output
                     url = io_utils.input_url()
-                    # Core Vulnerable check
+                    
+                    # Core Vulnerable check via version
                     core_list = open('database/core.jdb', 'r').readlines()
                     scanned_version = check_version(io_utils, url, compare_versions, core_list)
 
