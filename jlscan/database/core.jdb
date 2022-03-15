@@ -116,14 +116,12 @@
 {"name": "Information Disclosure", "CVE": "CVE-2017-9933", "version": "1.7.3<=3.7.2"}
 {"name": "XSS Vulnerability", "CVE": "CVE-2017-9934", "version": "1.7.3<=3.7.2"}
 {"name": "XSS Vulnerability", "CVE": "CVE-2017-7985", "version": "1.5.0<=3.7.2"}
-{"name": "SQL Injection", "CVE": "CVE-2017-8917", "version": "3.7.0"}
+{"name": "SQL injection vulnerability allows attackers to execute arbitrary SQL commands via unspecified vectors", "CVE": "CVE-2017-8917", "version": "3.7.0"}
 {"name": "Information Disclosure", "CVE": "CVE-2017-8057", "version": "3.4.0<=3.6.5"}
 {"name": "ACL Violations", "CVE": "CVE-2017-7989", "version": "3.2.0<=3.6.5"}
 {"name": "ACL Violations", "CVE": "CVE-2017-7988", "version": "1.6.0<=3.6.5"}
-{"name": "XSS Vulnerability", "CVE": "CVE-2017-7987", "version": "3.2.0<=3.6.5"}
-{"name": "XSS Vulnerability", "CVE": "CVE-2017-7986", "version": "1.5.0<=3.6.5"}
-{"name": "XSS Vulnerability", "CVE": "CVE-2017-7985", "version": "1.5.0<=3.6.5"}
-{"name": "XSS Vulnerability", "CVE": "CVE-2017-7984", "version": "3.2.0<=3.6.5"}
+{"name": "XSS Vulnerability inadequate escaping of file and folder names leads to XSS vulnerabilities in the template manager component", "CVE": "CVE-2017-7987", "version": "3.2.0<=3.6.5"}
+{"name": "XSS Vulnerability inadequate filtering leads to XSS in the template manager component", "CVE": "CVE-2017-7984,CVE-2017-7985,CVE-2017-7986", "version": "3.2.0<=3.6.5"}
 {"name": "Information Disclosure", "CVE": "CVE-2017-7983", "version": "1.5.0<=3.6.5"}
 {"name": "PHPMailer Security Advisory", "CVE": "", "version": "1.5.0<=3.6.5"}
 {"name": "Misc. Security Hardening", "CVE": "", "version": ""}
@@ -143,7 +141,7 @@
 {"name": "CSRF Hardening", "CVE": "CVE-2015-8563", "version": "3.2.0<=3.4.5"}
 {"name": "Directory Traversal", "CVE": "CVE-2015-8564", "version": "3.4.0<=3.4.5"}
 {"name": "Directory Traversal", "CVE": "CVE-2015-8565", "version": "3.2.0<=3.4.5"}
-{"name": "SQL Injection", "CVE": "", "version": "3.2.0<=3.4.4"}
+{"name": "SQL Injection allows remote attackers to execute arbitrary SQL commands via unspecified vectors", "CVE": "CVE-2015-7858", "version": "3.2.0<=3.4.4"}
 {"name": "ACL Violations", "CVE": "CVE-2015-7859", "version": "3.2.0<=3.4.4"}
 {"name": "XSS Vulnerability", "CVE": "CVE-2015-6939", "version": "3.4.0<=3.4.3"}
 {"name": "CSRF Protection", "CVE": "CVE-2015-5397", "version": "3.2.0<=3.4.1"}
@@ -152,7 +150,7 @@
 {"name": "Remote File Inclusion", "CVE": "CVE-2014-7228", "version": "2.5.4<=2.5.25|3.0.0<=3.2.5|3.3.0<=3.3.4"}
 {"name": "Unauthorised Logins", "CVE": "CVE-2014-6632", "version": "2.5.0<=2.5.24|2.5.0<=2.5.24|3.3.0<=3.3.3"}
 {"name": "XSS Vulnerability", "CVE": "CVE-2014-6631", "version": "3.2.0<=3.2.4|3.3.0<=3.3.3"}
-{"name": "SQL Injection", "CVE": "", "version": "3.1.0<=3.2.2"}
+{"name": "SQL Injection allows remote attackers to execute arbitrary SQL commands via unspecified vectors", "CVE": "CVE-2014-7981", "version": "3.1.0<=3.2.2"}
 {"name": "XSS Vulnerability", "CVE": "", "version": "3.1.2<=3.2.2"}
 {"name": "XSS Vulnerability", "CVE": "", "version": "2.5.0<=2.5.18|2.5.0<=2.5.18"}
 {"name": "Unauthorised Logins", "CVE": "", "version": "2.5.0<=2.5.18|2.5.0<=2.5.18"}
@@ -183,7 +181,7 @@
 {"name": "Information Disclosure", "CVE": "", "version": "1.5.0<=1.5.25"}
 {"name": "Password Change", "CVE": "", "version": "2.5.2|2.5.1|2.5.0|1.7.x|1.6.x"}
 {"name": "Privilege Escalation", "CVE": "", "version": "2.5.2|2.5.1|2.5.0|1.7.x|1.6.x"}
-{"name": "SQL Injection", "CVE": "", "version": "2.5.1|2.5.0|1.7.0<=1.7.5"}
+{"name": "Unspecified vulnerability allows attackers to obtain sensitive information via unknown vectors related to 'administrator.'", "CVE": "CVE-2012-0835,CVE-2012-0836,CVE-2012-0837", "version": "2.5.1|2.5.0|1.7.0<=1.7.5"}
 {"name": "XSS Vulnerability", "CVE": "", "version": "2.5.1|2.5.0"}
 {"name": "Information Disclosure", "CVE": "", "version": "2.5.0|1.7.0<=1.7.4"}
 {"name": "Information Disclosure", "CVE": "", "version": "1.7.0<=1.7.4"}
@@ -349,14 +347,10 @@
 {"name": "Information Disclosure", "CVE": "CVE-2017-9933", "version": "1.7.3<=3.7.2"}
 {"name": "XSS Vulnerability", "CVE": "CVE-2017-9934", "version": "1.7.3<=3.7.2"}
 {"name": "XSS Vulnerability", "CVE": "CVE-2017-7985", "version": "1.5.0<=3.7.2"}
-{"name": "SQL Injection", "CVE": "CVE-2017-8917", "version": "3.7.0"}
 {"name": "Information Disclosure", "CVE": "CVE-2017-8057", "version": "3.4.0<=3.6.5"}
 {"name": "ACL Violations", "CVE": "CVE-2017-7989", "version": "3.2.0<=3.6.5"}
 {"name": "ACL Violations", "CVE": "CVE-2017-7988", "version": "1.6.0<=3.6.5"}
 {"name": "XSS Vulnerability", "CVE": "CVE-2017-7987", "version": "3.2.0<=3.6.5"}
-{"name": "XSS Vulnerability", "CVE": "CVE-2017-7986", "version": "1.5.0<=3.6.5"}
-{"name": "XSS Vulnerability", "CVE": "CVE-2017-7985", "version": "1.5.0<=3.6.5"}
-{"name": "XSS Vulnerability", "CVE": "CVE-2017-7984", "version": "3.2.0<=3.6.5"}
 {"name": "Information Disclosure", "CVE": "CVE-2017-7983", "version": "1.5.0<=3.6.5"}
 {"name": "PHPMailer Security Advisory", "CVE": "", "version": "1.5.0<=3.6.5"}
 {"name": "Misc. Security Hardening", "CVE": "", "version": ""}
@@ -463,3 +457,5 @@
 {"name": "Redirect Spam", "CVE": "", "version": "1.5<=1.5.6"}
 {"name": "JRequest Variable Injection", "CVE": "", "version": "1.5<=1.5.6"}
 {"name": "Password Remind Functionality", "CVE": "", "version": "1.5<=1.5.5"}
+{"name": "CSRF in com_installer ajax_install endpoint", "CVE": "CVE-2020-15700", "version": "3.7.0<=3.9.19"}
+{"name": "Joomla 3.4.6 - 'configuration.php' Remote Code Execution", "CVE": "", "version": "3.0.0<=3.4.6"}

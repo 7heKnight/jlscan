@@ -16,7 +16,8 @@ def user_selection():
                 choice = io_utils.input_integer('Enter option: ')
                 if choice == 1:  # In this option, add more option for output
                     url = io_utils.input_url()
-                    # Core Vulnerable check
+
+                    # Core Vulnerable check via version
                     core_list = open('database/core.jdb', 'r').readlines()
                     scanned_version = check_version(io_utils, url, compare_versions, core_list)
 
@@ -29,11 +30,11 @@ def user_selection():
                     break
                 else:
                     io_utils.error_msg('Option not found!\n')
-            except ValueError:
+            except ValueError as v:
+                print(v)
                 io_utils.error_msg('Integer only\n')
             print()
     except KeyboardInterrupt:
-        print()
         io_utils.error_msg('Keyboard Interruption. Terminated!')
 
 
